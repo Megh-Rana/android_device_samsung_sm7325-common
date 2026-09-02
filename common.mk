@@ -182,6 +182,16 @@ $(call soong_config_set,lineage_health,fast_charge_value_fast_charge,0)
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint-service.samsung
 
+# AOSP userspace IMS and framework bearer services
+$(call inherit-product, packages/modules/ImsMedia/imsmedia.mk)
+$(call soong_config_set,imsstack_namespace,use_carrier_config_ext,true)
+$(call soong_config_set_bool,imsstack_namespace,use_android16_telephony_compat,true)
+
+PRODUCT_PACKAGES += \
+    ImsStack \
+    Iwlan \
+    QualifiedNetworksService
+
 # FlipFlap
 PRODUCT_PACKAGES += \
     FlipFlap
@@ -373,7 +383,8 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/google/interfaces \
     hardware/google/pixel \
-    hardware/samsung
+    hardware/samsung \
+    vendor/lineage/imsstack-carrier-config-ext
 
 # Inherit proprietary blobs
 $(call inherit-product, vendor/samsung/sm7325-common/sm7325-common-vendor.mk)
