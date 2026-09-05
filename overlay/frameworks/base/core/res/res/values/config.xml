@@ -130,7 +130,7 @@
     <!-- List supported color modes. -->
     <integer-array name="config_availableColorModes">
         <item>0</item>   <!-- COLOR_MODE_NATURAL -->
-        <item>256</item> <!-- COLOR_MODE_VENDOR  -->
+        <item>3</item>   <!-- COLOR_MODE_BOOSTED -->
     </integer-array>
 
     <!-- Screen brightness used to dim the screen while dozing in a very low power state.
