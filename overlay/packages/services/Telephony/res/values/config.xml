@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Tell the Telephony package which APK provides the IMS MMTel service. -->
     <string name="config_ims_mmtel_package" translatable="false">com.android.imsstack</string>
+
+    <!--
+        Use AudioManager.MODE_IN_COMMUNICATION instead of MODE_IN_CALL for IMS
+        (VoLTE / WiFi Calling) calls.
+
+        Background: The Samsung lahaina (SM7325) vendor Audio HAL intercepts
+        MODE_IN_CALL transitions to set up a hardware modem voice path. When
+        krazey's ImsStack is active the RTP stack runs entirely in software
+        (ImsMedia AP-local mode) and the proprietary startImsTraffic RIL
+        callback is never issued. The HAL therefore blocks indefinitely on
+        setMode(MODE_IN_CALL), triggering audioserver's 3 s TimeCheck watchdog
+        which kills the process and severs all in-call audio.
+
+        Setting config_use_voip_mode_for_ims=true instructs ImsPhoneCallTracker
+        to call AudioManager.setMode(MODE_IN_COMMUNICATION) for IMS calls.
+        MODE_IN_COMMUNICATION uses the software VOIP audio path (voip_rx /
+        voip_tx mix ports defined in audio_policy_configuration.xml) which does
+        NOT trigger the modem-side setup logic in the Samsung HAL.
+    -->
+    <bool name="config_use_voip_mode_for_ims">true</bool>
 </resources>
