@@ -1,0 +1,5 @@
+# radio.te
+
+# Allow ImsStack media handler to access cgroup for thread scheduling
+# during VoLTE audio session setup
+allow radio cgroup:dir search;
