@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <carrier_config_list>
+    <!--
+        Default config applied to every carrier unless overridden below.
+        These values are applied on top of the AOSP CarrierConfig defaults.
+    -->
     <carrier_config>
         <!-- Initial userspace MMTEL scope. -->
         <boolean name="carrier_volte_available_bool" value="true" />
@@ -26,4 +30,43 @@
             <item value="source=GERAN|UTRAN|EUTRAN|NGRAN|IWLAN|UNKNOWN, target=GERAN|UTRAN|EUTRAN|NGRAN|IWLAN, type=allowed" />
         </string-array>
     </carrier_config>
+
+    <!--
+        IR-MCI — Iran (MCC 432, MNC 11) — Tester 1
+        Symptoms: VoLTE call connects but audio silently fails ("can't hear
+        other side") due to audioserver crash. No IMS-specific overrides
+        needed beyond the global ones; the audio fix handles this. Enabling
+        carrier_volte_provisioned_bool=false prevents a provisioning check
+        that can block IMS registration on some MCI SIM profiles.
+    -->
+    <carrier_config mcc="432" mnc="11">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <!-- Skip provisioning check; MCI does not provision via OMA-DM -->
+        <boolean name="carrier_volte_provisioned_bool" value="false" />
+        <boolean name="imsvoice.audio_evs_support_bool" value="false" />
+    </carrier_config>
+
+    <!--
+        Entel Peru (MCC 716, MNC 17) — Tester 2
+        Symptoms: VOPS_NOT_SUPPORTED reported at LTE attach time causes the
+        device to skip VoLTE and attempt CSFB. On the second registration
+        attempt IMS connects but the call drops at ~6 s with
+        CODE_MEDIA_INIT_FAILED (401) due to the audio HAL hang.
+
+        carrier_ignore_error_domain_registration_on_lte_bool=true tells
+        ImsPhoneCallTracker to attempt IMS voice even when the network
+        advertises VOPS=0, matching the behaviour of Samsung's stock firmware
+        which also overrides VOPS for this carrier.
+
+        carrier_volte_provisioned_bool=false avoids a provisioning timeout
+        when Entel's IMS core does not respond to OMA-DM configuration.
+    -->
+    <carrier_config mcc="716" mnc="17">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <!-- Override VOPS_NOT_SUPPORTED: attempt IMS voice regardless -->
+        <boolean name="carrier_ignore_error_domain_registration_on_lte_bool" value="true" />
+        <boolean name="carrier_volte_provisioned_bool" value="false" />
+        <boolean name="imsvoice.audio_evs_support_bool" value="false" />
+    </carrier_config>
+
 </carrier_config_list>
