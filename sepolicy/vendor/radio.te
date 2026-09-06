@@ -1,5 +1,10 @@
 # radio.te
 
-# Allow ImsStack media handler to access cgroup for thread scheduling
-# during VoLTE audio session setup
+# Allow ImsMediaEventHandler (running under the 'radio' context) to search
+# cgroup directories for real-time thread scheduling during VoLTE audio
+# session setup (ImsMediaEventHandler priority assignment).
+#
+# The platform_app:udp_socket and scheduling_policy_service rules for ImsMedia
+# are already provided by packages/modules/ImsMedia/sepolicy/system_ext/private/
+# imsmedia.te, included via SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS in BoardConfigCommon.mk.
 allow radio cgroup:dir search;
