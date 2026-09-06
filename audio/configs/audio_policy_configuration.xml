@@ -202,14 +202,21 @@
             </devicePorts>
             <!-- route declaration, i.e. list all available sources for a given sink -->
             <routes>
+                <!--
+                    voip_rx is included in Earpiece/Speaker/Wired Headset/Wired Headphones
+                    so that VoLTE/IMS calls using MODE_IN_COMMUNICATION (software VOIP path)
+                    can reach the correct output device.  Without these routes the audio
+                    policy engine cannot resolve a path for the voip_rx mix port to any
+                    non-BT output, causing silent audio on VoLTE calls.
+                -->
                 <route type="mix" sink="Earpiece"
-                       sources="primary output,deep_buffer,fast,compressed_offload"/>
+                       sources="primary output,deep_buffer,fast,compressed_offload,voip_rx"/>
                 <route type="mix" sink="Speaker"
-                       sources="primary output,deep_buffer,fast,compressed_offload,mmap_no_irq_out"/>
+                       sources="primary output,deep_buffer,fast,compressed_offload,mmap_no_irq_out,voip_rx"/>
                 <route type="mix" sink="Wired Headset"
-                       sources="primary output,deep_buffer,fast,compressed_offload,mmap_no_irq_out"/>
+                       sources="primary output,deep_buffer,fast,compressed_offload,mmap_no_irq_out,voip_rx"/>
                 <route type="mix" sink="Wired Headphones"
-                       sources="primary output,deep_buffer,fast,compressed_offload,mmap_no_irq_out"/>
+                       sources="primary output,deep_buffer,fast,compressed_offload,mmap_no_irq_out,voip_rx"/>
                 <route type="mix" sink="USB Device Out"
                        sources="primary output,deep_buffer,fast,direct_pcm,compressed_offload,mmap_no_irq_out,hifi_playback"/>
                 <route type="mix" sink="USB Headset Out"
