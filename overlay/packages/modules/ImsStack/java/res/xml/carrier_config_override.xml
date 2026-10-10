@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--
+    Keep the Jio SIP/IPsec policy formerly provided by imsstack-carrier-config-ext.
+    The paired ImsStack revision reads this product resource after framework and
+    CarrierSettings data. MCC/MNC selectors are intentionally exact so these
+    IMS transport/security settings do not leak to other Indian operators.
+-->
+<carrier_config_list>
+    <carrier_config mcc="405" mnc="840">
+        <int name="ims.request_uri_type_int" value="0" />
+        <int name="ims.sip_preferred_transport_int" value="1" />
+        <int name="ims.ims_preferred_iptype_int" value="0" />
+        <boolean name="ims.sip_over_ipsec_enabled_bool" value="true" />
+        <boolean name="ims.sip_over_ipsec_enabled_in_roaming_bool" value="true" />
+        <int-array name="ims.ipsec_authentication_algorithms_int_array" num="1">
+            <item value="0" />
+        </int-array>
+        <int-array name="ims.ipsec_encryption_algorithms_int_array" num="2">
+            <item value="0" />
+            <item value="2" />
+        </int-array>
+        <int-array name="ims.supported_rats_int_array" num="3">
+            <item value="3" />
+            <item value="5" />
+            <item value="6" />
+        </int-array>
+        <int name="ims.max_allowed_network_mtu_int" value="1300" />
+    </carrier_config>
+    <carrier_config mcc="405" mnc="854">
+        <int name="ims.request_uri_type_int" value="0" />
+        <int name="ims.sip_preferred_transport_int" value="1" />
+        <int name="ims.ims_preferred_iptype_int" value="0" />
+        <boolean name="ims.sip_over_ipsec_enabled_bool" value="true" />
+        <boolean name="ims.sip_over_ipsec_enabled_in_roaming_bool" value="true" />
+        <int-array name="ims.ipsec_authentication_algorithms_int_array" num="1">
+            <item value="0" />
+        </int-array>
+        <int-array name="ims.ipsec_encryption_algorithms_int_array" num="2">
+            <item value="0" />
+            <item value="2" />
+        </int-array>
+        <int-array name="ims.supported_rats_int_array" num="3">
+            <item value="3" />
+            <item value="5" />
+            <item value="6" />
+        </int-array>
+        <int name="ims.max_allowed_network_mtu_int" value="1300" />
+    </carrier_config>
+    <carrier_config mcc="405" mnc="855">
+        <int name="ims.request_uri_type_int" value="0" />
+        <int name="ims.sip_preferred_transport_int" value="1" />
+        <int name="ims.ims_preferred_iptype_int" value="0" />
+        <boolean name="ims.sip_over_ipsec_enabled_bool" value="true" />
+        <boolean name="ims.sip_over_ipsec_enabled_in_roaming_bool" value="true" />
+        <int-array name="ims.ipsec_authentication_algorithms_int_array" num="1">
+            <item value="0" />
+        </int-array>
+        <int-array name="ims.ipsec_encryption_algorithms_int_array" num="2">
+            <item value="0" />
+            <item value="2" />
+        </int-array>
+        <int-array name="ims.supported_rats_int_array" num="3">
+            <item value="3" />
+            <item value="5" />
+            <item value="6" />
+        </int-array>
+        <int name="ims.max_allowed_network_mtu_int" value="1300" />
+    </carrier_config>
+    <carrier_config mcc="405" mnc="856">
+        <int name="ims.request_uri_type_int" value="0" />
+        <int name="ims.sip_preferred_transport_int" value="1" />
+        <int name="ims.ims_preferred_iptype_int" value="0" />
+        <boolean name="ims.sip_over_ipsec_enabled_bool" value="true" />
+        <boolean name="ims.sip_over_ipsec_enabled_in_roaming_bool" value="true" />
+        <int-array name="ims.ipsec_authentication_algorithms_int_array" num="1">
+            <item value="0" />
+        </int-array>
+        <int-array name="ims.ipsec_encryption_algorithms_int_array" num="2">
+            <item value="0" />
+            <item value="2" />
+        </int-array>
+        <int-array name="ims.supported_rats_int_array" num="3">
+            <item value="3" />
+            <item value="5" />
+            <item value="6" />
+        </int-array>
+        <int name="ims.max_allowed_network_mtu_int" value="1300" />
+    </carrier_config>
+    <carrier_config mcc="405" mnc="857">
+        <int name="ims.request_uri_type_int" value="0" />
+        <int name="ims.sip_preferred_transport_int" value="1" />
+        <int name="ims.ims_preferred_iptype_int" value="0" />
+        <boolean name="ims.sip_over_ipsec_enabled_bool" value="true" />
+        <boolean name="ims.sip_over_ipsec_enabled_in_roaming_bool" value="true" />
+        <int-array name="ims.ipsec_authentication_algorithms_int_array" num="1">
+            <item value="0" />
+        </int-array>
+        <int-array name="ims.ipsec_encryption_algorithms_int_array" num="2">
+            <item value="0" />
+            <item value="2" />
+        </int-array>
+        <int-array name="ims.supported_rats_int_array" num="3">
+            <item value="3" />
+            <item value="5" />
+            <item value="6" />
+        </int-array>
+        <int name="ims.max_allowed_network_mtu_int" value="1300" />
+    </carrier_config>
+    <carrier_config mcc="405" mnc="858">
+        <int name="ims.request_uri_type_int" value="0" />
+        <int name="ims.sip_preferred_transport_int" value="1" />
+        <int name="ims.ims_preferred_iptype_int" value="0" />
+        <boolean name="ims.sip_over_ipsec_enabled_bool" value="true" />
+        <boolean name="ims.sip_over_ipsec_enabled_in_roaming_bool" value="true" />
+        <int-array name="ims.ipsec_authentication_algorithms_int_array" num="1">
+            <item value="0" />
+        </int-array>
+        <int-array name="ims.ipsec_encryption_algorithms_int_array" num="2">
+            <item value="0" />
+            <item value="2" />
+        </int-array>
+        <int-array name="ims.supported_rats_int_array" num="3">
+            <item value="3" />
+            <item value="5" />
+            <item value="6" />
+        </int-array>
+        <int name="ims.max_allowed_network_mtu_int" value="1300" />
+    </carrier_config>
+    <carrier_config mcc="405" mnc="859">
+        <int name="ims.request_uri_type_int" value="0" />
+        <int name="ims.sip_preferred_transport_int" value="1" />
+        <int name="ims.ims_preferred_iptype_int" value="0" />
+        <boolean name="ims.sip_over_ipsec_enabled_bool" value="true" />
+        <boolean name="ims.sip_over_ipsec_enabled_in_roaming_bool" value="true" />
+        <int-array name="ims.ipsec_authentication_algorithms_int_array" num="1">
+            <item value="0" />
+        </int-array>
+        <int-array name="ims.ipsec_encryption_algorithms_int_array" num="2">
+            <item value="0" />
+            <item value="2" />
+        </int-array>
+        <int-array name="ims.supported_rats_int_array" num="3">
+            <item value="3" />
+            <item value="5" />
+            <item value="6" />
+        </int-array>
+        <int name="ims.max_allowed_network_mtu_int" value="1300" />
+    </carrier_config>
+    <carrier_config mcc="405" mnc="860">
+        <int name="ims.request_uri_type_int" value="0" />
+        <int name="ims.sip_preferred_transport_int" value="1" />
+        <int name="ims.ims_preferred_iptype_int" value="0" />
+        <boolean name="ims.sip_over_ipsec_enabled_bool" value="true" />
+        <boolean name="ims.sip_over_ipsec_enabled_in_roaming_bool" value="true" />
+        <int-array name="ims.ipsec_authentication_algorithms_int_array" num="1">
+            <item value="0" />
+        </int-array>
+        <int-array name="ims.ipsec_encryption_algorithms_int_array" num="2">
+            <item value="0" />
+            <item value="2" />
+        </int-array>
+        <int-array name="ims.supported_rats_int_array" num="3">
+            <item value="3" />
+            <item value="5" />
+            <item value="6" />
+        </int-array>
+        <int name="ims.max_allowed_network_mtu_int" value="1300" />
+    </carrier_config>
+    <carrier_config mcc="405" mnc="861">
+        <int name="ims.request_uri_type_int" value="0" />
+        <int name="ims.sip_preferred_transport_int" value="1" />
+        <int name="ims.ims_preferred_iptype_int" value="0" />
+        <boolean name="ims.sip_over_ipsec_enabled_bool" value="true" />
+        <boolean name="ims.sip_over_ipsec_enabled_in_roaming_bool" value="true" />
+        <int-array name="ims.ipsec_authentication_algorithms_int_array" num="1">
+            <item value="0" />
+        </int-array>
+        <int-array name="ims.ipsec_encryption_algorithms_int_array" num="2">
+            <item value="0" />
+            <item value="2" />
+        </int-array>
+        <int-array name="ims.supported_rats_int_array" num="3">
+            <item value="3" />
+            <item value="5" />
+            <item value="6" />
+        </int-array>
+        <int name="ims.max_allowed_network_mtu_int" value="1300" />
+    </carrier_config>
+    <carrier_config mcc="405" mnc="862">
+        <int name="ims.request_uri_type_int" value="0" />
+        <int name="ims.sip_preferred_transport_int" value="1" />
+        <int name="ims.ims_preferred_iptype_int" value="0" />
+        <boolean name="ims.sip_over_ipsec_enabled_bool" value="true" />
+        <boolean name="ims.sip_over_ipsec_enabled_in_roaming_bool" value="true" />
+        <int-array name="ims.ipsec_authentication_algorithms_int_array" num="1">
+            <item value="0" />
+        </int-array>
+        <int-array name="ims.ipsec_encryption_algorithms_int_array" num="2">
+            <item value="0" />
+            <item value="2" />
+        </int-array>
+        <int-array name="ims.supported_rats_int_array" num="3">
+            <item value="3" />
+            <item value="5" />
+            <item value="6" />
+        </int-array>
+        <int name="ims.max_allowed_network_mtu_int" value="1300" />
+    </carrier_config>
+    <carrier_config mcc="405" mnc="863">
+        <int name="ims.request_uri_type_int" value="0" />
+        <int name="ims.sip_preferred_transport_int" value="1" />
+        <int name="ims.ims_preferred_iptype_int" value="0" />
+        <boolean name="ims.sip_over_ipsec_enabled_bool" value="true" />
+        <boolean name="ims.sip_over_ipsec_enabled_in_roaming_bool" value="true" />
+        <int-array name="ims.ipsec_authentication_algorithms_int_array" num="1">
+            <item value="0" />
+        </int-array>
+        <int-array name="ims.ipsec_encryption_algorithms_int_array" num="2">
+            <item value="0" />
+            <item value="2" />
+        </int-array>
+        <int-array name="ims.supported_rats_int_array" num="3">
+            <item value="3" />
+            <item value="5" />
+            <item value="6" />
+        </int-array>
+        <int name="ims.max_allowed_network_mtu_int" value="1300" />
+    </carrier_config>
+    <carrier_config mcc="405" mnc="864">
+        <int name="ims.request_uri_type_int" value="0" />
+        <int name="ims.sip_preferred_transport_int" value="1" />
+        <int name="ims.ims_preferred_iptype_int" value="0" />
+        <boolean name="ims.sip_over_ipsec_enabled_bool" value="true" />
+        <boolean name="ims.sip_over_ipsec_enabled_in_roaming_bool" value="true" />
+        <int-array name="ims.ipsec_authentication_algorithms_int_array" num="1">
+            <item value="0" />
+        </int-array>
+        <int-array name="ims.ipsec_encryption_algorithms_int_array" num="2">
+            <item value="0" />
+            <item value="2" />
+        </int-array>
+        <int-array name="ims.supported_rats_int_array" num="3">
+            <item value="3" />
+            <item value="5" />
+            <item value="6" />
+        </int-array>
+        <int name="ims.max_allowed_network_mtu_int" value="1300" />
+    </carrier_config>
+    <carrier_config mcc="405" mnc="865">
+        <int name="ims.request_uri_type_int" value="0" />
+        <int name="ims.sip_preferred_transport_int" value="1" />
+        <int name="ims.ims_preferred_iptype_int" value="0" />
+        <boolean name="ims.sip_over_ipsec_enabled_bool" value="true" />
+        <boolean name="ims.sip_over_ipsec_enabled_in_roaming_bool" value="true" />
+        <int-array name="ims.ipsec_authentication_algorithms_int_array" num="1">
+            <item value="0" />
+        </int-array>
+        <int-array name="ims.ipsec_encryption_algorithms_int_array" num="2">
+            <item value="0" />
+            <item value="2" />
+        </int-array>
+        <int-array name="ims.supported_rats_int_array" num="3">
+            <item value="3" />
+            <item value="5" />
+            <item value="6" />
+        </int-array>
+        <int name="ims.max_allowed_network_mtu_int" value="1300" />
+    </carrier_config>
+    <carrier_config mcc="405" mnc="866">
+        <int name="ims.request_uri_type_int" value="0" />
+        <int name="ims.sip_preferred_transport_int" value="1" />
+        <int name="ims.ims_preferred_iptype_int" value="0" />
+        <boolean name="ims.sip_over_ipsec_enabled_bool" value="true" />
+        <boolean name="ims.sip_over_ipsec_enabled_in_roaming_bool" value="true" />
+        <int-array name="ims.ipsec_authentication_algorithms_int_array" num="1">
+            <item value="0" />
+        </int-array>
+        <int-array name="ims.ipsec_encryption_algorithms_int_array" num="2">
+            <item value="0" />
+            <item value="2" />
+        </int-array>
+        <int-array name="ims.supported_rats_int_array" num="3">
+            <item value="3" />
+            <item value="5" />
+            <item value="6" />
+        </int-array>
+        <int name="ims.max_allowed_network_mtu_int" value="1300" />
+    </carrier_config>
+    <carrier_config mcc="405" mnc="867">
+        <int name="ims.request_uri_type_int" value="0" />
+        <int name="ims.sip_preferred_transport_int" value="1" />
+        <int name="ims.ims_preferred_iptype_int" value="0" />
+        <boolean name="ims.sip_over_ipsec_enabled_bool" value="true" />
+        <boolean name="ims.sip_over_ipsec_enabled_in_roaming_bool" value="true" />
+        <int-array name="ims.ipsec_authentication_algorithms_int_array" num="1">
+            <item value="0" />
+        </int-array>
+        <int-array name="ims.ipsec_encryption_algorithms_int_array" num="2">
+            <item value="0" />
+            <item value="2" />
+        </int-array>
+        <int-array name="ims.supported_rats_int_array" num="3">
+            <item value="3" />
+            <item value="5" />
+            <item value="6" />
+        </int-array>
+        <int name="ims.max_allowed_network_mtu_int" value="1300" />
+    </carrier_config>
+    <carrier_config mcc="405" mnc="868">
+        <int name="ims.request_uri_type_int" value="0" />
+        <int name="ims.sip_preferred_transport_int" value="1" />
+        <int name="ims.ims_preferred_iptype_int" value="0" />
+        <boolean name="ims.sip_over_ipsec_enabled_bool" value="true" />
+        <boolean name="ims.sip_over_ipsec_enabled_in_roaming_bool" value="true" />
+        <int-array name="ims.ipsec_authentication_algorithms_int_array" num="1">
+            <item value="0" />
+        </int-array>
+        <int-array name="ims.ipsec_encryption_algorithms_int_array" num="2">
+            <item value="0" />
+            <item value="2" />
+        </int-array>
+        <int-array name="ims.supported_rats_int_array" num="3">
+            <item value="3" />
+            <item value="5" />
+            <item value="6" />
+        </int-array>
+        <int name="ims.max_allowed_network_mtu_int" value="1300" />
+    </carrier_config>
+    <carrier_config mcc="405" mnc="869">
+        <int name="ims.request_uri_type_int" value="0" />
+        <int name="ims.sip_preferred_transport_int" value="1" />
+        <int name="ims.ims_preferred_iptype_int" value="0" />
+        <boolean name="ims.sip_over_ipsec_enabled_bool" value="true" />
+        <boolean name="ims.sip_over_ipsec_enabled_in_roaming_bool" value="true" />
+        <int-array name="ims.ipsec_authentication_algorithms_int_array" num="1">
+            <item value="0" />
+        </int-array>
+        <int-array name="ims.ipsec_encryption_algorithms_int_array" num="2">
+            <item value="0" />
+            <item value="2" />
+        </int-array>
+        <int-array name="ims.supported_rats_int_array" num="3">
+            <item value="3" />
+            <item value="5" />
+            <item value="6" />
+        </int-array>
+        <int name="ims.max_allowed_network_mtu_int" value="1300" />
+    </carrier_config>
+    <carrier_config mcc="405" mnc="870">
+        <int name="ims.request_uri_type_int" value="0" />
+        <int name="ims.sip_preferred_transport_int" value="1" />
+        <int name="ims.ims_preferred_iptype_int" value="0" />
+        <boolean name="ims.sip_over_ipsec_enabled_bool" value="true" />
+        <boolean name="ims.sip_over_ipsec_enabled_in_roaming_bool" value="true" />
+        <int-array name="ims.ipsec_authentication_algorithms_int_array" num="1">
+            <item value="0" />
+        </int-array>
+        <int-array name="ims.ipsec_encryption_algorithms_int_array" num="2">
+            <item value="0" />
+            <item value="2" />
+        </int-array>
+        <int-array name="ims.supported_rats_int_array" num="3">
+            <item value="3" />
+            <item value="5" />
+            <item value="6" />
+        </int-array>
+        <int name="ims.max_allowed_network_mtu_int" value="1300" />
+    </carrier_config>
+    <carrier_config mcc="405" mnc="871">
+        <int name="ims.request_uri_type_int" value="0" />
+        <int name="ims.sip_preferred_transport_int" value="1" />
+        <int name="ims.ims_preferred_iptype_int" value="0" />
+        <boolean name="ims.sip_over_ipsec_enabled_bool" value="true" />
+        <boolean name="ims.sip_over_ipsec_enabled_in_roaming_bool" value="true" />
+        <int-array name="ims.ipsec_authentication_algorithms_int_array" num="1">
+            <item value="0" />
+        </int-array>
+        <int-array name="ims.ipsec_encryption_algorithms_int_array" num="2">
+            <item value="0" />
+            <item value="2" />
+        </int-array>
+        <int-array name="ims.supported_rats_int_array" num="3">
+            <item value="3" />
+            <item value="5" />
+            <item value="6" />
+        </int-array>
+        <int name="ims.max_allowed_network_mtu_int" value="1300" />
+    </carrier_config>
+    <carrier_config mcc="405" mnc="872">
+        <int name="ims.request_uri_type_int" value="0" />
+        <int name="ims.sip_preferred_transport_int" value="1" />
+        <int name="ims.ims_preferred_iptype_int" value="0" />
+        <boolean name="ims.sip_over_ipsec_enabled_bool" value="true" />
+        <boolean name="ims.sip_over_ipsec_enabled_in_roaming_bool" value="true" />
+        <int-array name="ims.ipsec_authentication_algorithms_int_array" num="1">
+            <item value="0" />
+        </int-array>
+        <int-array name="ims.ipsec_encryption_algorithms_int_array" num="2">
+            <item value="0" />
+            <item value="2" />
+        </int-array>
+        <int-array name="ims.supported_rats_int_array" num="3">
+            <item value="3" />
+            <item value="5" />
+            <item value="6" />
+        </int-array>
+        <int name="ims.max_allowed_network_mtu_int" value="1300" />
+    </carrier_config>
+    <carrier_config mcc="405" mnc="873">
+        <int name="ims.request_uri_type_int" value="0" />
+        <int name="ims.sip_preferred_transport_int" value="1" />
+        <int name="ims.ims_preferred_iptype_int" value="0" />
+        <boolean name="ims.sip_over_ipsec_enabled_bool" value="true" />
+        <boolean name="ims.sip_over_ipsec_enabled_in_roaming_bool" value="true" />
+        <int-array name="ims.ipsec_authentication_algorithms_int_array" num="1">
+            <item value="0" />
+        </int-array>
+        <int-array name="ims.ipsec_encryption_algorithms_int_array" num="2">
+            <item value="0" />
+            <item value="2" />
+        </int-array>
+        <int-array name="ims.supported_rats_int_array" num="3">
+            <item value="3" />
+            <item value="5" />
+            <item value="6" />
+        </int-array>
+        <int name="ims.max_allowed_network_mtu_int" value="1300" />
+    </carrier_config>
+    <carrier_config mcc="405" mnc="874">
+        <int name="ims.request_uri_type_int" value="0" />
+        <int name="ims.sip_preferred_transport_int" value="1" />
+        <int name="ims.ims_preferred_iptype_int" value="0" />
+        <boolean name="ims.sip_over_ipsec_enabled_bool" value="true" />
+        <boolean name="ims.sip_over_ipsec_enabled_in_roaming_bool" value="true" />
+        <int-array name="ims.ipsec_authentication_algorithms_int_array" num="1">
+            <item value="0" />
+        </int-array>
+        <int-array name="ims.ipsec_encryption_algorithms_int_array" num="2">
+            <item value="0" />
+            <item value="2" />
+        </int-array>
+        <int-array name="ims.supported_rats_int_array" num="3">
+            <item value="3" />
+            <item value="5" />
+            <item value="6" />
+        </int-array>
+        <int name="ims.max_allowed_network_mtu_int" value="1300" />
+    </carrier_config>
+</carrier_config_list>
