@@ -39,3 +39,5 @@ persist.dbg.volte_avail_ovr=1
 persist.dbg.wfc_avail_ovr=1
 persist.dbg.allow_ims_off=1
 persist.radio.imsmedia.low_latency_playback=true
+persist.radio.override_psvoice=true
+persist.radio.override_pse911=true

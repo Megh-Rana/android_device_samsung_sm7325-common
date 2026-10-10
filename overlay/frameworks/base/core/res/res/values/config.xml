@@ -1343,6 +1343,7 @@
     <bool name="config_carrier_volte_available">true</bool>
     <bool name="config_device_volte_available">true</bool>
     <bool name="config_device_vt_available">false</bool>
+    <bool name="config_device_wfc_ims_available">true</bool>
 
     <!-- Keep serving-cell identity available to the system IMS stack. -->
     <string-array name="config_serviceStateLocationAllowedPackages">
