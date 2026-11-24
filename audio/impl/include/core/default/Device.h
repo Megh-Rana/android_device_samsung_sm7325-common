@@ -21,7 +21,10 @@
 
 #include "ParametersUtil.h"
 
+#include <condition_variable>
 #include <memory>
+#include <mutex>
+#include <thread>
 
 #include <hardware/audio.h>
 #include <media/AudioParameter.h>
@@ -173,15 +176,21 @@ struct Device : public IDevice, public ParametersUtil {
 
     uint32_t version() const { return mDevice->common.version; }
 
+    Result setCallMode(audio_mode_t mode);
     int halSetParameters(const char* keysAndValues) override;
 
   private:
+    std::mutex mCallModeMutex;
+    std::condition_variable mCallSlotCondition;
+    std::thread mCallSlotThread;
+    bool mWaitingForCallSlot = false;
     bool mIsClosed;
     audio_hw_device_t* mDevice;
     int mOpenedStreamsCount = 0;
 
     virtual ~Device();
 
+    void waitForCallSlot();
     Result doClose();
     std::tuple<Result, AudioPatchHandle> createOrUpdateAudioPatch(
             AudioPatchHandle patch, const hidl_vec<AudioPortConfig>& sources,

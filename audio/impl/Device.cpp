@@ -28,8 +28,10 @@
 #include <memory.h>
 #include <string.h>
 #include <algorithm>
+#include <chrono>
 
 #include <android/log.h>
+#include <cutils/properties.h>
 #include <hidl/HidlTransportSupport.h>
 #include <mediautils/MemoryLeakTrackUtil.h>
 #include <memunreachable/memunreachable.h>
@@ -77,6 +79,45 @@ char* Device::halGetParameters(const char* keys) {
 
 int Device::halSetParameters(const char* keysAndValues) {
     return mDevice->set_parameters(mDevice, keysAndValues);
+}
+
+// Samsung's RIL publishes these flags for modem calls. Userspace IMS calls
+// can briefly enter IN_CALL without ever selecting a modem voice slot.
+static const char* activeCallSlotParameter() {
+    if (property_get_bool("vendor.calls.slot_id0", false)) return "g_call_sim_slot=0x01";
+    if (property_get_bool("vendor.calls.slot_id1", false)) return "g_call_sim_slot=0x02";
+    return nullptr;
+}
+
+Result Device::setCallMode(audio_mode_t mode) {
+    std::lock_guard<std::mutex> lock(mCallModeMutex);
+    if (mIsClosed) return Result::INVALID_STATE;
+
+    const char* slot = activeCallSlotParameter();
+    if (slot) halSetParameters(slot);
+    Result result = analyzeStatus("set_mode", mDevice->set_mode(mDevice, mode));
+    if (result != Result::OK) return result;
+
+    mWaitingForCallSlot = mode == AUDIO_MODE_IN_CALL && !slot;
+    if (mWaitingForCallSlot && !mCallSlotThread.joinable()) {
+        mCallSlotThread = std::thread(&Device::waitForCallSlot, this);
+    }
+    mCallSlotCondition.notify_all();
+    return result;
+}
+
+void Device::waitForCallSlot() {
+    std::unique_lock<std::mutex> lock(mCallModeMutex);
+    while (true) {
+        mCallSlotCondition.wait(lock, [this] { return mIsClosed || mWaitingForCallSlot; });
+        if (mIsClosed) return;
+        if (const char* slot = activeCallSlotParameter()) {
+            halSetParameters(slot);
+            mWaitingForCallSlot = false;
+        } else {
+            mCallSlotCondition.wait_for(lock, std::chrono::milliseconds(50));
+        }
+    }
 }
 
 // Methods from ::android::hardware::audio::CPP_VERSION::IDevice follow.
@@ -556,8 +597,13 @@ Return<Result> Device::setConnectedState(const DeviceAddress& address, bool conn
 #endif
 
 Result Device::doClose() {
-    if (mIsClosed || mOpenedStreamsCount != 0) return Result::INVALID_STATE;
-    mIsClosed = true;
+    {
+        std::lock_guard<std::mutex> lock(mCallModeMutex);
+        if (mIsClosed || mOpenedStreamsCount != 0) return Result::INVALID_STATE;
+        mIsClosed = true;
+    }
+    mCallSlotCondition.notify_all();
+    if (mCallSlotThread.joinable()) mCallSlotThread.join();
     return analyzeStatus("close", audio_hw_device_close(mDevice));
 }
 
