@@ -324,6 +324,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # RIL
+$(call inherit-product, hardware/lineage/generic-ims/ims.mk)
+
 PRODUCT_PACKAGES += \
     secril_config_svc \
     sehradiomanager

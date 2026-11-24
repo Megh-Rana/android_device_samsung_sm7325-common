@@ -153,6 +153,7 @@ ro.vendor.extension_library=libqti-perfd-client.so
 vendor.powerhal.disp.idle_support=false
 
 # RIL
+ro.vendor.multisim.simslotcount=2
 vendor.sec.rild.libpath=/vendor/lib64/libsec-ril.so
 persist.vendor.radio.atfwd.start=true
 ro.vendor.use_data_netmgrd=false

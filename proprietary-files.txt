@@ -613,7 +613,6 @@ vendor/lib64/libqsocket.so
 vendor/etc/init/init.qti.qcv.rc
 
 # RIL
-vendor/bin/hw/rild
 vendor/bin/adpl
 vendor/bin/ipacm-diag
 vendor/bin/rmt_storage
@@ -649,7 +648,6 @@ vendor/lib64/libconfigdb.so
 vendor/lib64/libengmode_client.so
 vendor/lib64/libqcmaputils.so
 vendor/lib64/libqrtr.so
-vendor/lib64/libril_sem.so
 vendor/lib64/libsec-ril.so|78be1ce841e24e81c3c7ff60fd3bca7e98fdfe85|f0084fffefc72868fcd0cf8ce2a6f63f2a809079
 vendor/lib64/libsecril-client.so
 vendor/lib64/libsystem_health_mon.so
@@ -658,6 +656,15 @@ vendor/lib64/libxml.so
 vendor/lib64/vendor.samsung.hardware.radio.bridge@2.0.so
 vendor/lib64/vendor.samsung.hardware.radio.bridge@2.1.so
 vendor/lib64/vendor.samsung.hardware.radio.channel@2.0.so
+
+# AIDL RIL - Galaxy S23 (TheMuppets/sm8550-common 3d54461dc974ec972ebbbb3adde192563c49f1d9)
+vendor/bin/hw/rild|b4e84db4ab705dd2689424d65ba06f74156e3ada
+vendor/lib64/libril_sem.so|86bcd2e51991ee8353f257769cc9eb27cd6dc810
+vendor/lib64/vendor.samsung.hardware.radio-V1-ndk.so|47690b36bf2846efd407f65ebb1d13086509c6e1
+vendor/lib64/vendor.samsung.hardware.radio.bridge-V1-ndk.so|1e546c9440e9373543e8df15b16fd6b07aa084da
+vendor/lib64/vendor.samsung.hardware.radio.data-V1-ndk.so|b062f04d2d5a8ea1e21fc6602c534b042532ec07
+vendor/lib64/vendor.samsung.hardware.radio.messaging-V1-ndk.so|05cb51696937cbb16b2bb4b23478b50465b21a48
+vendor/lib64/vendor.samsung.hardware.radio.sim-V1-ndk.so|86303fe6ba1625fee3998d463b2679c03eb41416
 
 # Sensors
 vendor/bin/factory.ssc
