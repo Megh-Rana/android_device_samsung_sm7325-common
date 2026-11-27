@@ -648,7 +648,7 @@ vendor/lib64/libconfigdb.so
 vendor/lib64/libengmode_client.so
 vendor/lib64/libqcmaputils.so
 vendor/lib64/libqrtr.so
-vendor/lib64/libsec-ril.so|78be1ce841e24e81c3c7ff60fd3bca7e98fdfe85|f0084fffefc72868fcd0cf8ce2a6f63f2a809079
+vendor/lib64/libsec-ril.so|78be1ce841e24e81c3c7ff60fd3bca7e98fdfe85|b95287a33f5722a48ae23368a40ed5992c89e8dd
 vendor/lib64/libsecril-client.so
 vendor/lib64/libsystem_health_mon.so
 vendor/lib64/libvkmanager_vendor.so
